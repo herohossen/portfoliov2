@@ -1,0 +1,199 @@
+/* Global styles */
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #1f1f1f;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar ul li {
+  margin: 0 10px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  background-color: #555;
+}
+
+/* Section styles */
+.section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.2em;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.project-card {
+  padding: 20px;
+  background-color: #444;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
+/* Code styles */
+.code {
+  font-family: "Courier New", Courier, monospace;
+  color: #fff;
+}
+
+.code .terminal {
+  border: 2px solid #444;
+  background-color: #000;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.code .directory {
+  color: #0f0; /* Green color for directory symbol */
+}
+
+.code form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.code input[type="text"],
+.code input[type="email"],
+.code textarea,
+.code button {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #666;
+  background-color: #333;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+}
+
+.code input[type="text"],
+.code input[type="email"],
+.code textarea {
+  width: 100%; /* Expand input fields to full width */
+}
+
+.code form button {
+  align-self: flex-start; /* Align button to the left */
+}
+
+.code button {
+  cursor: pointer;
+  background-color: #0f0;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.code button:hover {
+  background-color: #090;
+}
+
+/* 3D Cube Effect */
+.code-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px; /* Adjust width to suit your design */
+  height: 300px; /* Adjust height to suit your design */
+  perspective: 600px;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 100%; /* Adjust width to match container */
+  height: 100%; /* Adjust height to match container */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.front {
+  transform: rotateY(0deg) translateZ(150px); /* Adjust translateZ to control depth */
+}
+.back {
+  transform: rotateY(180deg) translateZ(150px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(150px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(150px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(150px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(150px);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
