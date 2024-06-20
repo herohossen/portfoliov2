@@ -156,3 +156,13 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => typeText(line2, "Starting portfolio...", 100), 6000);
   setTimeout(() => typeText(line3, "Listening on port 3000...", 100, true), 8000); // Last element
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
+});
