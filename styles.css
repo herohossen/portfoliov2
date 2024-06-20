@@ -77,31 +77,31 @@ body {
 }
 
 /* Code styles */
-.code {
+/* .code {
   font-family: "Courier New", Courier, monospace;
   color: #fff;
-}
+} */
 
-.code .terminal {
+/* .code .terminal {
   border: 2px solid #444;
   background-color: #000;
   padding: 20px;
   margin-top: 20px;
   text-align: left;
   line-height: 1.5;
-}
+} */
 
-.code .directory {
-  color: #0f0; /* Green color for directory symbol */
-}
+/* .code .directory {
+  color: #0f0; 
+} */
 
-.code form {
+/* .code form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
-.code input[type="text"],
+/* .code input[type="text"],
 .code input[type="email"],
 .code textarea,
 .code button {
@@ -118,14 +118,14 @@ body {
 .code input[type="text"],
 .code input[type="email"],
 .code textarea {
-  width: 100%; /* Expand input fields to full width */
-}
+  width: 100%; 
+} */
 
-.code form button {
-  align-self: flex-start; /* Align button to the left */
-}
+/* .code form button {
+  align-self: flex-start; 
+} */
 
-.code button {
+/* .code button {
   cursor: pointer;
   background-color: #0f0;
   color: #000;
@@ -137,7 +137,79 @@ body {
 
 .code button:hover {
   background-color: #090;
+} */
+
+
+
+
+/* Contact Form Styles */
+.contact {
+  padding: 80px 20px;
+  background-color: #080808;
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #444;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form .form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0f0;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  outline: none;
+}
+
+.contact-form button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0f0;
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #090;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
 
 /* 3D Cube Effect */
 .code-box {
