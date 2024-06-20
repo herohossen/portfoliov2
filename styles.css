@@ -64,7 +64,7 @@ body {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   justify-items: center;
 }
@@ -76,71 +76,28 @@ body {
   border-radius: 5px;
 }
 
-/* Code styles */
-/* .code {
-  font-family: "Courier New", Courier, monospace;
-  color: #fff;
-} */
-
-/* .code .terminal {
-  border: 2px solid #444;
-  background-color: #000;
-  padding: 20px;
-  margin-top: 20px;
-  text-align: left;
-  line-height: 1.5;
-} */
-
-/* .code .directory {
-  color: #0f0; 
-} */
-
-/* .code form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-/* .code input[type="text"],
-.code input[type="email"],
-.code textarea,
-.code button {
-  margin: 10px;
-  padding: 10px;
-  width: 300px;
-  border: 1px solid #666;
-  background-color: #333;
-  color: #fff;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1em;
+/* Typing animation */
+.typing {
+  display: inline-block;
+  position: relative;
 }
 
-.code input[type="text"],
-.code input[type="email"],
-.code textarea {
-  width: 100%; 
-} */
-
-/* .code form button {
-  align-self: flex-start; 
-} */
-
-/* .code button {
-  cursor: pointer;
-  background-color: #0f0;
-  color: #000;
-  border: none;
-  padding: 12px 20px;
-  font-size: 1.2em;
-  transition: background-color 0.3s ease;
+.typing::after {
+  content: "|";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  animation: blink 1s step-end infinite;
 }
 
-.code button:hover {
-  background-color: #090;
-} */
-
-
-
+@keyframes blink {
+  from, to {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+}
 
 /* Contact Form Styles */
 .contact {
@@ -202,24 +159,15 @@ body {
   transform: scale(1.05);
 }
 
-
-
-
-
-
-
-
-
-
 /* 3D Cube Effect */
 .code-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px; /* Adjust width to suit your design */
-  height: 300px; /* Adjust height to suit your design */
+  width: 300px;
+  height: 300px;
   perspective: 600px;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
 }
 
 .cube {
@@ -232,8 +180,8 @@ body {
 
 .face {
   position: absolute;
-  width: 100%; /* Adjust width to match container */
-  height: 100%; /* Adjust height to match container */
+  width: 100%;
+  height: 100%;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #ccc;
   display: flex;
@@ -243,7 +191,7 @@ body {
 }
 
 .front {
-  transform: rotateY(0deg) translateZ(150px); /* Adjust translateZ to control depth */
+  transform: rotateY(0deg) translateZ(150px);
 }
 .back {
   transform: rotateY(180deg) translateZ(150px);
@@ -263,14 +211,12 @@ body {
 
 @keyframes rotate {
   from {
-    transform: rotateX(0deg) rotateY(0deg);
+      transform: rotateX(0deg) rotateY(0deg);
   }
   to {
-    transform: rotateX(360deg) rotateY(360deg);
+      transform: rotateX(360deg) rotateY(360deg);
   }
 }
-
-
 
 /* Footer styles */
 .footer {
@@ -309,7 +255,7 @@ body {
 }
 
 .footer .social-link:hover {
-  color: #0f0; /* Change to the hover color you prefer */
+  color: #0f0;
 }
 
 .footer-bottom {
@@ -322,36 +268,31 @@ body {
   font-size: 0.9em;
 }
 
-/* Responsive footer styles */
+/* Responsive styles */
 @media (max-width: 600px) {
+  .navbar ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar ul li {
+      margin: 10px 0;
+  }
+
+  .project-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .contact-form {
+      padding: 20px 10px;
+  }
+
   .footer .footer-content {
-    flex-direction: column;
+      flex-direction: column;
   }
-}
 
-
-
-
-
-/*typing*/
-.typing {
-  display: inline-block;
-  position: relative;
-}
-
-.typing::after {
-  content: "|";
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  from, to {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
+  .footer .footer-social {
+      flex-direction: column;
+      gap: 10px;
   }
 }
