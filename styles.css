@@ -197,3 +197,27 @@ body {
     transform: rotateX(360deg) rotateY(360deg);
   }
 }
+
+
+/*typing*/
+.typing {
+  display: inline-block;
+  position: relative;
+}
+
+.typing::after {
+  content: "|";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

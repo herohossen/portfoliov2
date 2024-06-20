@@ -122,3 +122,37 @@ document.addEventListener("DOMContentLoaded", () => {
     cube.style.transform = "rotateX(0deg) rotateY(0deg)";
   });
 });
+
+
+
+/*Typing js*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Typing animation function
+  function typeText(element, text, delay, isLast = false) {
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        element.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, delay);
+      } else if (!isLast) {
+        element.classList.remove("typing");
+      }
+    }
+    type();
+  }
+
+  // Typing text animations
+  const mainTitle = document.getElementById("main-title");
+  const welcomeMessage = document.getElementById("welcome-message");
+  const line1 = document.getElementById("line1");
+  const line2 = document.getElementById("line2");
+  const line3 = document.getElementById("line3");
+
+  typeText(mainTitle, "Md. Delowar Hossen", 100);
+  setTimeout(() => typeText(welcomeMessage, "Welcome to My Portfolio", 100), 2000);
+  setTimeout(() => typeText(line1, "~ npm start", 100), 4000);
+  setTimeout(() => typeText(line2, "Starting portfolio...", 100), 6000);
+  setTimeout(() => typeText(line3, "Listening on port 3000...", 100, true), 8000); // Last element
+});
